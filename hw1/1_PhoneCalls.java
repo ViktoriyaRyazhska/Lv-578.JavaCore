@@ -52,7 +52,7 @@ public class PhoneCalls {
 			System.out.printf("%s%12d", "|", cost[i]);			
 			System.out.printf("%s%9d", "|", duration[i]);			
 			System.out.printf("%s%17d%s%n", "|", (duration[i] * cost[i]), "|");
-			sum =+ (duration[i] * cost[i]);
+			sum += (duration[i] * cost[i]);
 			
 		}
 		System.out.println("--------------------------------------------------------------");
