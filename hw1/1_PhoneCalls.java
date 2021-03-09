@@ -1,5 +1,5 @@
 	/*
-	 * Phone calls from three different countries are с1, с2 and с3 standard units per minute. 
+	 * Phone calls from three different countries are СЃ1, СЃ2 and СЃ3 standard units per minute. 
 	 * Talks continued t1, t2 and t3 minutes. How much computer will count for each call separately and all talk together? 
 	 * Input all source data from console, make calculations and output to the screen. 
 	 * 
@@ -16,19 +16,19 @@ public class PhoneCalls {
 	public static void main(String[] args) throws NumberFormatException, IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-		System.out.println("В скільки країн здійснювали дзвінки?");
+		System.out.println("Р’ СЃРєС–Р»СЊРєРё РєСЂР°С—РЅ Р·РґС–Р№СЃРЅСЋРІР°Р»Рё РґР·РІС–РЅРєРё?");
 		int countOfCountry = Integer.parseInt(br.readLine());
 		
 		String[] country = new String[countOfCountry];
 		for (int i = 0; i < countOfCountry; i++) {
-			System.out.println("Введіть назву країни під номером " + (i+1));
+			System.out.println("Р’РІРµРґС–С‚СЊ РЅР°Р·РІСѓ РєСЂР°С—РЅРё РїС–Рґ РЅРѕРјРµСЂРѕРј " + (i+1));
 			String CountryTemp = br.readLine();
 			country[i] = CountryTemp;		
 		}
 		
 		int[] cost = new int[countOfCountry];
 		for (int i = 0; i < countOfCountry; i++) {
-			System.out.println("Введіть вартість хвилини розмови в країну: " + country[i]);
+			System.out.println("Р’РІРµРґС–С‚СЊ РІР°СЂС‚С–СЃС‚СЊ С…РІРёР»РёРЅРё СЂРѕР·РјРѕРІРё РІ РєСЂР°С—РЅСѓ: " + country[i]);
 			int costTemp = Integer.parseInt(br.readLine());
 			cost[i] = costTemp;
 		}
@@ -36,13 +36,13 @@ public class PhoneCalls {
 		
 		int[] duration = new int[countOfCountry];
 		for (int i = 0; i < countOfCountry; i++) {
-			System.out.println("Введіть кількість хвилин розмов в країну: " + country[i]);
+			System.out.println("Р’РІРµРґС–С‚СЊ РєС–Р»СЊРєС–СЃС‚СЊ С…РІРёР»РёРЅ СЂРѕР·РјРѕРІ РІ РєСЂР°С—РЅСѓ: " + country[i]);
 			int durationTemp = Integer.parseInt(br.readLine());
 			duration[i] = durationTemp;
 		}
 		
 		System.out.println("--------------------------------------------------------------");
-		System.out.printf("%s%-20s%-10s%-10s%-10s%n", "|", "Країна","| Вартість хв","| Кі-ть хв","| Вартість розмов |");
+		System.out.printf("%s%-20s%-10s%-10s%-10s%n", "|", "РљСЂР°С—РЅР°","| Р’Р°СЂС‚С–СЃС‚СЊ С…РІ","| РљС–-С‚СЊ С…РІ","| Р’Р°СЂС‚С–СЃС‚СЊ СЂРѕР·РјРѕРІ |");
 		System.out.println("--------------------------------------------------------------");
 		
 		int sum = 0; 
@@ -56,7 +56,7 @@ public class PhoneCalls {
 			
 		}
 		System.out.println("--------------------------------------------------------------");
-		System.out.printf("%s%s%54d%s%n", "|", "Всього:", sum, "|");
+		System.out.printf("%s%s%54d%s%n", "|", "Р’СЃСЊРѕРіРѕ:", sum, "|");
 		System.out.println("--------------------------------------------------------------");
 
 	}
