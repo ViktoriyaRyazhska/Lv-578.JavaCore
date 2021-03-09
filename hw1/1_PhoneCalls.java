@@ -16,7 +16,7 @@ public class PhoneCalls {
 	public static void main(String[] args) throws NumberFormatException, IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-		System.out.println("В скільки країн здійснювали дзвінки?");
+		System.out.println("До скількох країн здійснювали дзвінки?");
 		int countOfCountry = Integer.parseInt(br.readLine());
 		
 		String[] country = new String[countOfCountry];
