@@ -1,9 +1,9 @@
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.GregorianCalendar;
+import java.time.LocalDate;
+
+
+
 
 public class Person {
 	private String firstName;
@@ -49,10 +49,8 @@ public class Person {
 	}
 	
 	public int getAge() {
-		Date date = new Date();
-		Calendar calendar = new GregorianCalendar();
-		calendar.setTime(date);		
-		return calendar.get(Calendar.YEAR) - birthYear;
+		LocalDate date = LocalDate.now();		
+		return date.getYear() - birthYear;
 	}
 	
 	public void changeName(String fn, String ln) {
@@ -60,15 +58,16 @@ public class Person {
 		lastName = ln;
 	}
 	
-	public void input() throws IOException {
-		BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-		System.out.print("Please, enter information: ");
-		
-		String[] info = bufferedReader.readLine().split(" ");
-		 
-	    firstName = info[0];
-	    lastName = info[1];
-	    birthYear = Integer.parseInt(info[2]);
+	public void input(BufferedReader bufferedReader){
+		try {
+			System.out.print("Please, enter information: ");
+			String[] info = bufferedReader.readLine().split(" ");
+			firstName = info[0];
+			lastName = info[1];
+			birthYear = Integer.parseInt(info[2]);
+		}catch(IOException e){
+			e.printStackTrace();
+		}
 	}
 
 	public void output() {
