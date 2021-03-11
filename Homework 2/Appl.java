@@ -1,3 +1,5 @@
+import java.time.LocalDate;
+
 public class Appl {
     public static void main(String[] args) {
         Person p1 = new Person();
@@ -5,6 +7,7 @@ public class Appl {
         Person p3 = new Person("Mykola","Mykolenko");
         Person p4 = new Person("Dmytro","Dmytrenko");
         Person p5 = new Person("Illia", "Illenko");
+        LocalDate currentDate = LocalDate.now();
 
         p1.input();
         p2.input();

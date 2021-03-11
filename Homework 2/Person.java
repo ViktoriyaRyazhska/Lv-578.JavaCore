@@ -1,3 +1,4 @@
+import java.time.LocalDate;
 import java.util.Scanner;
 
 public class Person {
@@ -6,6 +7,9 @@ public class Person {
     private String lastName;
     private int birthYear;
     private Scanner scanner = new Scanner(System.in);
+    LocalDate currentDate = LocalDate.now();
+    private int year = currentDate.getYear();
+
 
     public Person(String firstName, String lastName) {
         this.firstName = firstName;
@@ -26,7 +30,7 @@ public class Person {
     }
 
     public int getAge(){
-        return 2021 - birthYear;
+        return year - birthYear;
     }
 
     public void output(){
