@@ -2,7 +2,6 @@ package com.site;
 
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.time.LocalDate;
 
 public class Person {
@@ -50,8 +49,7 @@ public class Person {
 		return date.getYear() - birthYear;
 	}
 
-	public void input() throws IOException {
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	public void input(BufferedReader br) throws IOException {
 
 		System.out.println("Input First Name:");
 		String name = br.readLine();
