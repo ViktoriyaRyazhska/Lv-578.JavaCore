@@ -1,3 +1,4 @@
+package PracticalTasks3;
 
 public class App {
 

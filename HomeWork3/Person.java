@@ -1,9 +1,8 @@
+package HomeWork3;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.time.LocalDate;
-
-
-
 
 public class Person {
 	private String firstName;
