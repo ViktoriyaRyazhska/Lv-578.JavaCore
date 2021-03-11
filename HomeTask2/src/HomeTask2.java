@@ -1,8 +1,10 @@
+import java.util.Scanner;
 
-public class HomeTask3 {
+public class HomeTask2 {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+
+		Scanner userInput = new Scanner(System.in);
 		Person person1 = new Person();
 		person1.setFirstName("Jack");
 		person1.setLastName("Black");
@@ -18,7 +20,7 @@ public class HomeTask3 {
 		person4.setBirthYear(1988);
 		
 		Person person5 = new Person();
-		person5.input();
+		person5.input(userInput);
 		
 		System.out.println(person1);
 		System.out.println(person2);

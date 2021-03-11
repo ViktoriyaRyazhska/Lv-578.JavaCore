@@ -1,10 +1,11 @@
+import java.time.*;
 import java.util.Scanner;
 
 public class Person {
 	private String firstName;
 	private String lastName;
 	private int birthYear;
-	private Scanner userInput = new Scanner(System.in);
+	private int currentYear = LocalDate.now().getYear();
 	
 	public Person() {}
 	
@@ -38,7 +39,7 @@ public class Person {
 	}
 	
 	public int getAge() {
-		return 2021 - birthYear;
+		return currentYear - birthYear;
 	}
 	
 	public void changeName(String fn, String ln) {
@@ -46,7 +47,7 @@ public class Person {
 		lastName = ln;
 	}
 	
-	public void input() {
+	public void input(Scanner userInput) {
 		System.out.print("Please enter first name: ");
 		firstName = userInput.next();
 		System.out.print("Please enter last name: ");
