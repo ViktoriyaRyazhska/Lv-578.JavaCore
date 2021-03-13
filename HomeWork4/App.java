@@ -26,7 +26,7 @@ public class App {
 		Dog dog3 = new Dog("Jack", Breeds.FRENCH_BULLDOGS, 4);
 		
 		System.out.print("\nTask 2");
-		checkDogByName(dog1, dog2, dog3);
+		System.out.print(checkDogByName(dog1, dog2, dog3) ? "\nWe have two dogs with the same name." : "\nWe haven't two dogs with the same name.");
 		System.out.print("\nThe oldest dog: " + getOldestDog(dog1, dog2, dog3));
 	}
 	
@@ -62,16 +62,14 @@ public class App {
 		return "Max number: " + max + ". Min number: " + min + ".";
 	}
 	
-	private static void checkDogByName(Dog dog1, Dog dog2, Dog dog3) {
-		if (dog1.getName().equalsIgnoreCase(dog2.getName())){
-			System.out.print("\nWe have two dogs with the same name: " + dog1.getName());
-		}else if (dog1.getName().equalsIgnoreCase(dog3.getName())){
-			System.out.print("\nWe have two dogs with the same name: " + dog1.getName());
-		}else if (dog2.getName().equalsIgnoreCase(dog3.getName())){
-			System.out.print("\nWe have two dogs with the same name: " + dog2.getName());
-		}else {
-			System.out.print("\nWe haven't two dogs with the same name.");
+	
+	private static boolean checkDogByName(Dog dog1, Dog dog2, Dog dog3) {
+		if (dog1.getName().equalsIgnoreCase(dog2.getName()) || 
+				dog1.getName().equalsIgnoreCase(dog3.getName()) || 
+				dog2.getName().equalsIgnoreCase(dog3.getName())){
+			return true;
 		}
+		return false;
 	}
 	
 	private static Dog getOldestDog(Dog dog1, Dog dog2, Dog dog3) {
