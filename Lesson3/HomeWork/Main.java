@@ -1,29 +1,60 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
+        BufferedReader sc = new BufferedReader(new InputStreamReader(System.in));
 
-        Employee employee1 = new Employee();
-        Employee employee2 = new Employee();
-        Employee employee3 = new Employee();
 
-        employee1.setName("Vasya");
-        employee1.setRate(15); //USD
-        employee1.setHours(4);
+        Person person1 = new Person();
+        Person person2 = new Person();
+        Person person3 = new Person();
+        Person person4 = new Person();
+        Person person5 = new Person();
 
-        employee2.setName("Jon");
-        employee2.setRate(23); //USD
-        employee2.setHours(8);
+        System.out.println("Enter information about person1");
+        System.out.print("Name: ");
+        person1.setFirstName(sc.readLine());
+        System.out.print("Last name: ");
+        person1.setLastName(sc.readLine());
+        System.out.print("Birthday: ");
+        person1.setBirthYear(Integer.parseInt(sc.readLine()));
 
-        employee3.setName("Sanya");
-        employee3.setRate(8); //USD
-        employee3.setHours(10);
+        System.out.print("");
+        System.out.println("Enter information about person2");
+        System.out.print("Name: ");
+        person2.setFirstName(sc.readLine());
+        System.out.print("Last name: ");
+        person2.setLastName(sc.readLine());
+        System.out.print("Birthday: ");
+        person2.setBirthYear(Integer.parseInt(sc.readLine()));
 
-        System.out.println(employee1.getName() + " " + employee1.getSalary() + " USD + bonus: "
-                + employee1.getBonuses() + " Total: " + employee1.getTotalSalary());
-        System.out.println(employee2.getName() + " " + employee2.getSalary() + " USD + bonus: "
-                + employee2.getBonuses() + " Total: " + employee2.getTotalSalary());
-        System.out.println(employee3.getName() + " " + employee3.getSalary() + " USD + bonus: "
-                + employee3.getBonuses() + " Total: " + employee3.getTotalSalary());
+        person2.output();
 
-        System.out.println("Total salary of all employee: " + ((int)(employee1.getTotalSalary() + employee2.getTotalSalary() + employee3.getTotalSalary())));
+        System.out.println("Enter information about person3");
+        System.out.print("Name: ");
+        person3.setFirstName(sc.readLine());
+        System.out.print("Last name: ");
+        person3.setLastName(sc.readLine());
+        System.out.print("Birthday: ");
+        person3.setBirthYear(Integer.parseInt(sc.readLine()));
+
+        System.out.println("Enter information about person4");
+        System.out.print("Name: ");
+        person4.setFirstName(sc.readLine());
+        System.out.print("Last name: ");
+        person4.setLastName(sc.readLine());
+        System.out.print("Birthday: ");
+        person4.setBirthYear(Integer.parseInt(sc.readLine()));
+
+        System.out.println("Enter information about person5");
+        System.out.print("Name: ");
+        person5.setFirstName(sc.readLine());
+        System.out.print("Last name: ");
+        person5.setLastName(sc.readLine());
+        System.out.print("Birthday: ");
+        person5.setBirthYear(Integer.parseInt(sc.readLine()));
+
     }
 }
