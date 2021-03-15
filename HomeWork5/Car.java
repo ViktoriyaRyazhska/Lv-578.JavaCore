@@ -65,7 +65,7 @@ public class Car {
 	
 	public static class YearComparator implements Comparator<Car> {
 	    public int compare(Car c1, Car c2) {
-			return (int)(c1.getYear() - c2.getYear());
+			return (c1.getYear() - c2.getYear());
 	    }	   
 	}
 	
