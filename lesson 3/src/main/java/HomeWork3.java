@@ -73,7 +73,7 @@ public class HomeWork3 {
             for (int j = i + 1; j < dogs.size(); j++) {
                 if (dogs.get(j).getName().equals(name)) {
                     System.out.println("Name " + name + " repeated");
-                    repeated = true;
+                    repeated = true ;
                     break;
                 }
             }
