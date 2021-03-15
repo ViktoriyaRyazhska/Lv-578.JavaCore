@@ -12,7 +12,6 @@ public class Dog {
 	 * @param age	Age in years;
 	 */
 	public Dog(String name, Breeds breed, int age) {
-		super();
 		this.name = name;
 		this.breed = breed;
 		this.age = age;

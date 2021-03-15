@@ -10,11 +10,14 @@ public class App {
 		
 		// task 1.1
 		System.out.print("Task 1.1 \nPlease enter three numbers separated by spaces: ");
-		System.out.println(checkRange(bufferedReader.readLine().split(" ")));
+		String [] nums = bufferedReader.readLine().split(" ");
+		
+		System.out.println(checkRange(nums) ? "All numbers belong to the range [-5,5]" 
+				: "One of the numbers don't belong to the range [-5.5].");
 		
 		// task 1.2
-		System.out.print("\nTask 1.2 \nPlease enter three numbers separated by spaces: ");
-		System.out.println(checkMaxMin(bufferedReader.readLine().split(" ")));
+		System.out.print("\nTask 1.2");
+		System.out.println("\nMax number: " + checkMax(nums) + ". Min number: " + checkMin(nums) + ".");
 		
 		// task 1.3
 		System.out.print("\nTask 1.3 \nPlease enter number of HTTP Error: ");
@@ -26,42 +29,51 @@ public class App {
 		Dog dog3 = new Dog("Jack", Breeds.FRENCH_BULLDOGS, 4);
 		
 		System.out.print("\nTask 2");
-		System.out.print(checkDogByName(dog1, dog2, dog3) ? "\nWe have two dogs with the same name." : "\nWe haven't two dogs with the same name.");
+		System.out.print(checkDogByName(dog1, dog2, dog3) ? "\nWe have two dogs with the same name." : 
+			"\nWe haven't two dogs with the same name.");
 		System.out.print("\nThe oldest dog: " + getOldestDog(dog1, dog2, dog3));
 	}
 	
-	private static String checkRange(String ... nums) {
+	private static boolean checkRange(String ... nums) {
 		try {
 			for(String num : nums) {
 				float f = Float.parseFloat(num);
 				if(-5 > f || f > 5) {
-					return "One of the numbers don't belong to the range [-5.5].";
+					return false;
 				}
 			}		
 		}catch (NumberFormatException e) {
-			return e.toString();
-		}
-		return "All numbers belong to the range [-5,5]";
+			System.out.println(e);}
+		return true;
 	}
 	
-	private static String checkMaxMin(String ... nums) {
-		int max = -2147483648, min = 2147483647;
+	private static int checkMax(String ... nums) {
+		int max = -2147483648;
 		try {
 			for(String num : nums) {
 				int i = Integer.parseInt(num);
 				if(i > max) {
 					max = i;
 				}
+			}		
+		}catch (NumberFormatException e) {
+			System.out.println(e);}
+		return max;
+	}
+	
+	private static int checkMin(String ... nums) {
+		int min = 2147483647;
+		try {
+			for(String num : nums) {
+				int i = Integer.parseInt(num);
 				if(i < min){
 					min = i;
 				}
 			}		
 		}catch (NumberFormatException e) {
-			return e.toString();
-		}
-		return "Max number: " + max + ". Min number: " + min + ".";
+			System.out.println(e);}
+		return min;
 	}
-	
 	
 	private static boolean checkDogByName(Dog dog1, Dog dog2, Dog dog3) {
 		if (dog1.getName().equalsIgnoreCase(dog2.getName()) || 
