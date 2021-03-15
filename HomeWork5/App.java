@@ -6,7 +6,6 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 
 import HomeWork5.Car.YearComparator;
-import PracticalTasks5.Employee;
 
 public class App {
 	public static void main(String[] args) throws IOException {
@@ -39,10 +38,10 @@ public class App {
 		
 		// task 3.2
 		int res[] = getMinAndPos(nums);
-		System.out.printf("\nTask 3.2 \nMinimum number %d on position %d.", res[0], res[1]);
+		System.out.printf("\nTask 3.2 \nMinimum number of first five %d on position %d.", res[0], res[1]);
 		
 		// task 4
-		System.out.println("\nTask 4 \nPlease enter a sequence of numbers separated by \"Enter\": ");
+		System.out.println("\n\nTask 4 \nPlease enter a sequence of numbers separated by \"Enter\": ");
 		System.out.println("Product of all entered positive numbers: " 
 		+ getArrayListProduct(readSequence(bufferedReader)));
 	

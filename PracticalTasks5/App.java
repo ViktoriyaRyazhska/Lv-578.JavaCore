@@ -19,7 +19,10 @@ public class App {
 		//1.2
 		System.out.println("The sum of positive numbers: " + getSumOfPositive(nums));
 		//1.3
-		System.out.println("The amount of negative numbers: " + getAmountOfNegative(nums)); 
+		System.out.println("The amount of negative numbers: " + getAmountOfNegative(nums));
+		//1.4
+		System.out.println(getAmountOfNegative(nums) > getAmountOfPositive(nums) ?
+				"The negative values more." : "The positive values more.");
 		
 		// task 2
 		Employee e1 = new Employee("Tyberiy Bohus", 1, 8000);
@@ -79,6 +82,16 @@ public class App {
 		int amount = 0;
 		for(int num : nums) {
 			if(num < 0) {
+				amount++;
+				}
+			}		
+		return amount;
+	}
+	
+	private static int getAmountOfPositive(int ... nums) {
+		int amount = 0;
+		for(int num : nums) {
+			if(num > 0) {
 				amount++;
 				}
 			}		
