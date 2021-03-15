@@ -2,26 +2,29 @@ import java.util.Scanner;
 
 public class HomeTask3 {
 	
-	public static String numbers(float num1, float num2, float num3) {
-		return (((num1 >= -5) && (num1 <= 5)) && ((num2 >= -5) && (num2 <= 5)) && ((num3 >= -5) && (num3 <= 5))) ? "All three numbers are in range [-5,5]" : "Some numbers are not in range [-5,5]";
+	public static boolean numberInRange(float num) {
+		return (num >= -5) && (num <= 5);
 	}
 	
-	private static void minMax(int num1, int num2, int num3) {
+	public static int min(int num1, int num2, int num3) {
 		int min = num1;
-		int max = num1;
 		if (num2 < min) min = num2;
-		else if (num2 > max) max = num2;
 		if (num3 < min) min = num3;
-		else if (num3 > max) max = num3;
-		System.out.println("Min number is " + min);
-		System.out.println("Max number is " + max);
+		return min;
+	}
+	
+	public static int max(int num1, int num2, int num3) {
+		int max = num1;
+		if (num2 > max) max = num2;
+		if (num3 > max) max = num3;
+		return max;
 	}
 	
 	enum HTTPError {
 		Bad_Request, Unauthorized, Payment_Required, Forbidden, Not_Found, Method_Not_Allowed
 	}
 	
-	private static String errorName(int code) {
+	public static String errorName(int code) {
 		switch (code) {
 		case 400:
 			return HTTPError.Bad_Request.name();
@@ -40,7 +43,11 @@ public class HomeTask3 {
 		}
 	}
 	
-	private static void oldestDog(Dog dog1, Dog dog2, Dog dog3) {
+	public static boolean sameDogNames(Dog dog1, Dog dog2, Dog dog3) {
+		return ((dog1.getName() == dog2.getName()) || (dog1.getName() == dog3.getName()) || (dog3.getName() == dog2.getName()));
+	}
+	
+	public static String oldestDog(Dog dog1, Dog dog2, Dog dog3) {
 		int maxAge = dog1.getAge();
 		Dog oldest = dog1;
 		if (dog2.getAge() > maxAge) {
@@ -51,7 +58,7 @@ public class HomeTask3 {
 			maxAge = dog3.getAge();
 			oldest = dog3;
 		}
-		System.out.println("The oldest dog: " + oldest);
+		return "The oldest dog: " + oldest;
 	}
 
 	public static void main(String[] args) {
@@ -65,7 +72,8 @@ public class HomeTask3 {
 		System.out.print("Enter third number: ");
 		float thirdNumber = userInput.nextFloat();
 		
-		System.out.println(HomeTask3.numbers(firstNumber, secondNumber, thirdNumber));
+		if (numberInRange(firstNumber) && numberInRange(secondNumber) && numberInRange(thirdNumber)) System.out.println("All three numbers are in range [-5,5]");
+		else System.out.println("Some numbers are not in range [-5,5]");
 		
 		System.out.println("Min - max task");
 		System.out.print("Enter first number: ");
@@ -75,7 +83,8 @@ public class HomeTask3 {
 		System.out.print("Enter third number: ");
 		thirdNumber = userInput.nextInt();
 		
-		HomeTask3.minMax((int)firstNumber, (int)secondNumber, (int)thirdNumber);
+		System.out.println("Max number is " + max((int)firstNumber, (int)secondNumber, (int)thirdNumber));
+		System.out.println("Min number is " + min((int)firstNumber, (int)secondNumber, (int)thirdNumber));
 		
 		System.out.println("HTTP Error name task");
 		System.out.print("Enter HTTP Error code 4xx: ");
@@ -86,8 +95,8 @@ public class HomeTask3 {
 		Dog dog1 = new Dog("Killer", Breed.Chihuahua, 8);
 		Dog dog2 = new Dog("Killer", Breed.Bulldog, 10);
 		Dog dog3 = new Dog("Alfy", Breed.Poodle, 5);
-		System.out.println((dog1.getName() == dog2.getName()) || (dog1.getName() == dog3.getName()) || (dog3.getName() == dog2.getName()) ? "There are dogs with the same name" : "All dogs have different names");
-		HomeTask3.oldestDog(dog1, dog2, dog3);
+		System.out.println(HomeTask3.sameDogNames(dog1, dog2, dog3) ? "There are dogs with the same name" : "All dogs have different names");
+		System.out.println(HomeTask3.oldestDog(dog1, dog2, dog3));
 	}
 
 }

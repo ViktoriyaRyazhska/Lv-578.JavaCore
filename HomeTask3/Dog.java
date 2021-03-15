@@ -4,7 +4,7 @@ enum Breed {
 
 public class Dog {
 	private String name;
-	private String breed;
+	private Breed breed;
 	private int age;
 	
 	public Dog() {}
@@ -15,7 +15,7 @@ public class Dog {
 	
 	public Dog(String name, Breed breed, int age) {
 		this.name = name;
-		this.breed = breed.name();
+		this.breed = breed;
 		this.age = age;
 	}
 
@@ -27,11 +27,11 @@ public class Dog {
 		this.name = name;
 	}
 
-	public String getBreed() {
+	public Breed getBreed() {
 		return breed;
 	}
 
-	public void setBreed(String breed) {
+	public void setBreed(Breed breed) {
 		this.breed = breed;
 	}
 
@@ -45,6 +45,6 @@ public class Dog {
 	
 	@Override
 	public String toString() {
-		return "Name - " + name + ", breed - " + breed;
+		return "Name - " + name + ", breed - " + breed + ", age - " + age;
 	}
 }
