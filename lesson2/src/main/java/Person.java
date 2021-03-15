@@ -1,13 +1,13 @@
+import java.time.LocalDate;
 import java.util.Date;
+import java.util.Locale;
 
 public class Person {
 
     private String firstName;
     private String lastName;
     private int birthYear;
-    private int age;
-    Date d = new Date();
-    int year = d.getYear() + 1900;
+
 
     public Person() {
 
@@ -50,8 +50,7 @@ public class Person {
 
 
     public int getAge() {
-        age = year - birthYear;
-        return age;
+        return LocalDate.now().getYear() - birthYear;
     }
     public void changeName (String firstName, String lastName){
         setFirstName(firstName);
