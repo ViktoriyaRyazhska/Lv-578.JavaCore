@@ -11,24 +11,25 @@ public class MinMax {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		int[] array = new int[3];
 		int maxValue = array[0];
-		int minValue = array[0];
 
 		for (int i = 0; i < array.length; i++) {
 			System.out.println("Enter the number (int): ");
 			int num = Integer.parseInt(br.readLine());
 			array[i] = num;
-
-			if (array[i] < minValue) {
-				minValue = array[i];
-			}
-
 			if (array[i] > maxValue) {
 				maxValue = array[i];
 			}
+		}
 
+		int minValue = array[0];
+
+		for (int i = 0; i < array.length; i++) {
+			if (array[i] < minValue) {
+				minValue = array[i];
+			}
 		}
 
 		System.out.println("MaxValue: " + maxValue + " MinValue: " + minValue);
 	}
 
-} 
+}
